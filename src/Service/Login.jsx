@@ -1,4 +1,4 @@
-import logo from '../assets/images/logo.svg'
+import logo from '../assets/grant.jpg'
 import {useState} from "react";
 import {LoginAction} from "./service.js";
 import {useNavigate} from "react-router-dom";
@@ -24,7 +24,7 @@ export const Login =() => {
                             <div className="col-lg-4 mx-auto">
                                 <div className="auth-form-light text-left py-5 px-4 px-sm-5">
                                     <div className="brand-logo">
-                                        <img src={logo} alt="logo"/>
+                                        <img src={logo}  className={"w-25"} alt="logo"/>
                                     </div>
                                     <h4>Salom. Grant Atlas'ga hush kelbisz</h4>
                                     <h6 className="font-weight-light">Zarur ma'lumotlarni kiritng</h6>
