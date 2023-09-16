@@ -32,6 +32,7 @@ export const News = () => {
     }, [])
 
     const uploadPhoto = async () => {
+        toast("Iltimos kutib turing bu bir qancha vaqt talab qilishi mumkin", {className: "bg-info text-white", icon:"⚠️"})
         const img = document.getElementById("img").files[0]
         const formData = new FormData()
         formData.append("photo", img)
