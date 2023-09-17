@@ -11,7 +11,7 @@ export const LoginAction = async (data) => {
             localStorage.setItem("access_token", res.data.token)
             localStorage.setItem("user_uuid", res.data.user.id)
             localStorage.setItem("path", "/")
-            return toast.success("Hush kelbisiz 👋")
+            return toast.success("Hush kelibsiz 👋")
         }
     } catch (err) {
         if (err.response.status === 401) {

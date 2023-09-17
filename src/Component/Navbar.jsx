@@ -17,6 +17,10 @@ export const Navbar = () => {
         localStorage.clear()
     }
 
+    function active (){
+        document.getElementById("sidebar").classList.toggle("active")
+    }
+
     return (
         <div>
             <nav className="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -27,10 +31,6 @@ export const Navbar = () => {
                                                                                        alt="logo"/></a>
                 </div>
                 <div className="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-                    {/*<button className="navbar-toggler navbar-toggler align-self-center" type="button"*/}
-                    {/*        data-toggle="minimize">*/}
-                    {/*    <span className="icon-menu"></span>*/}
-                    {/*</button>*/}
                     <ul className="navbar-nav mr-lg-2">
                         <li className="nav-item nav-search d-none d-lg-block">
                             <div className="input-group">
@@ -58,7 +58,7 @@ export const Navbar = () => {
                         </li>
 
                     </ul>
-                    <button className="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+                    <button onClick={active} className="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
                             data-toggle="offcanvas">
                         <span className="icon-menu"></span>
                     </button>
