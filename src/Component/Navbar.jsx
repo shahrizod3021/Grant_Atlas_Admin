@@ -1,6 +1,5 @@
 import {GetData} from "../Service/service.js";
 import {useEffect, useState} from "react";
-import {Apis} from "../Service/Apis.js";
 import grant from '../assets/grant.jpg'
 import {Link} from "react-router-dom";
 export const Navbar = () => {
@@ -21,13 +20,18 @@ export const Navbar = () => {
         document.getElementById("sidebar").classList.toggle("active")
     }
 
+    function profile(){
+        document.getElementById("profile").classList.toggle("show")
+        document.getElementById("profile-down").classList.toggle("show")
+    }
+
     return (
         <div>
             <nav className="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
                 <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                    <a className="navbar-brand brand-logo mr-5" href="index.html"><img src={grant}
+                    <a className="navbar-brand brand-logo mr-5" href="https://grandatlashotel.com"><img src={grant}
                                                                                        className="mr-2" alt="logo"/></a>
-                    <a className="navbar-brand brand-logo-mini" href="index.html"><img src={grant}
+                    <a className="navbar-brand brand-logo-mini" href="https://grandatlashotel.com"><img src={grant}
                                                                                        alt="logo"/></a>
                 </div>
                 <div className="navbar-menu-wrapper d-flex align-items-center justify-content-end">
@@ -39,12 +43,12 @@ export const Navbar = () => {
                         </li>
                     </ul>
                     <ul className="navbar-nav navbar-nav-right">
-                        <li className="nav-item nav-profile dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+                        <li id={"profile"} className="nav-item nav-profile dropdown">
+                            <a onClick={profile} className="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
                                id="profileDropdown">
                                 <img src={grant} width={"100%"} alt="profile"/>
                             </a>
-                            <div className="dropdown-menu dropdown-menu-right navbar-dropdown"
+                            <div id={"profile-down"} className="dropdown-menu dropdown-menu-right navbar-dropdown"
                                  aria-labelledby="profileDropdown">
                                 <Link to={"/settings"} className="dropdown-item">
                                     <i className="ti-settings text-primary"></i>
