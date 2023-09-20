@@ -17,9 +17,9 @@ export const Rooms = () => {
     const [descriptionRu, setDescriptionRu] = useState('')
     const [descriptionEng, setDescriptionEng] = useState('')
     const [descriptionTurk, setDescriptionTurk] = useState('')
-    const [howMuch, setHowMuch] = useState(0)
-    const [howMany, setHowMany] = useState(0)
-    const [size, setSize] = useState(0)
+    const [howMuch, setHowMuch] = useState('')
+    const [howMany, setHowMany] = useState('')
+    const [size, setSize] = useState('')
     const [id, setId] = useState('')
     const [more, setMore] = useState('')
 
@@ -224,20 +224,20 @@ export const Rooms = () => {
                                 <label htmlFor="howMany">
                                     Xona necha kishilik
                                 </label>
-                                <input type={"number"} className={"form-control mb-3"} value={howMany}
+                                <input type={"text"} className={"form-control mb-3"} value={howMany}
                                        onChange={e => setHowMany(e.target.value)} id={"howMany"}
                                        name={"howMany"}/>
 
                                 <label htmlFor="howMuch">
                                     Xonalar soni
                                 </label>
-                                <input type={"number"} className={"form-control mb-3"} value={howMuch}
+                                <input type={"text"} className={"form-control mb-3"} value={howMuch}
                                        onChange={e => setHowMuch(e.target.value)} id={"howMuch"}
                                        name={"howMuch"}/>
                                 <label htmlFor="szie">
                                     Xona o'lchami
                                 </label>
-                                <input type={"number"} className={"form-control mb-3"} value={size}
+                                <input type={"text"} className={"form-control mb-3"} value={size}
                                        onChange={e => setSize(e.target.value)} id={"szie"}
                                        name={"size"}/>
                             </form>
@@ -311,20 +311,20 @@ export const Rooms = () => {
                                 <label htmlFor="mahalla">
                                     Mahalliy mehmonlar uchun
                                 </label>
-                                <input type={"number"} className={"form-control mb-3"} value={howMany}
+                                <input type={"text"} className={"form-control mb-3"} value={howMany}
                                           onChange={e => setHowMany(e.target.value)} id={"mahalla"}
                                           name={"mahalla"}/>
 
                                 <label htmlFor="chetel">
                                     Chet elliklar mehmonlar uchun
                                 </label>
-                                <input type={"number"} className={"form-control mb-3"} value={howMuch}
+                                <input type={"text"} className={"form-control mb-3"} value={howMuch}
                                        onChange={e => setHowMuch(e.target.value)} id={"chetel"}
                                        name={"chetel"}/>
                                 <label htmlFor="ferm">
                                     Tour firmalar uchun
                                 </label>
-                                <input type={"number"} className={"form-control mb-3"} value={size}
+                                <input type={"text"} className={"form-control mb-3"} value={size}
                                        onChange={e => setSize(e.target.value)} id={"ferm"}
                                        name={"ferm"}/>
 
