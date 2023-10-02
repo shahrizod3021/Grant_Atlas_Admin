@@ -45,7 +45,17 @@ export const Rooms = () => {
     };
 
     const data = {
-        nameUz, nameRu, nameEng, nameTurk, descriptionUz, descriptionRu, descriptionEng, descriptionTurk, howMany, howMuch, size
+        nameUz,
+        nameRu,
+        nameEng,
+        nameTurk,
+        descriptionUz,
+        descriptionRu,
+        descriptionEng,
+        descriptionTurk,
+        howMany,
+        howMuch,
+        size
     }
 
     const getAll = async () => {
@@ -59,6 +69,7 @@ export const Rooms = () => {
     const addRoom = async () => {
         await AddRoom(data)
         await getAll()
+        await clear()
     }
 
     const editRoom = async () => {
@@ -83,10 +94,16 @@ export const Rooms = () => {
         setDescriptionRu("")
         setDescriptionEng("")
         setDescriptionTurk("")
+        setHowMuch("")
+        setHowMuch("")
+        setSize("")
 
     }
     const uploadPhoto = async () => {
-        toast("Iltimos kutib turing bu bir qancha vaqt talab qilishi mumkin", {className: "bg-info text-white", icon:"⚠️"})
+        toast("Iltimos kutib turing bu bir qancha vaqt talab qilishi mumkin", {
+            className: "bg-info text-white",
+            icon: "⚠️"
+        })
         const img = document.getElementById("img").files[0]
         const formData = new FormData()
         formData.append("photo", img)
@@ -105,14 +122,15 @@ export const Rooms = () => {
         }
     }
 
-    const catchId=  (id) => {
+    const catchId = (id) => {
         localStorage.setItem("roomId", id)
     }
     return (
         <div>
             <div className={"container-scroller"}>
                 <button type={"button"} data-bs-toggle="modal" data-bs-target="#exampleModal"
-                        className={"btn btn-warning text-white mb-3"}>Yangi xona <i className={"fas fa-plus-circle"}></i></button>
+                        className={"btn btn-warning text-white mb-3"}>Yangi xona <i
+                    className={"fas fa-plus-circle"}></i></button>
                 <div className={"row row-cols-1 row-cols-md-3 g-4"}>
                     {rooms.map((item) => (
                         <>
@@ -138,7 +156,9 @@ export const Rooms = () => {
                                         qisqacha: {item.description.length > 30 ? <>{item.description.substring(0, 20)}...</> : <>{item.description}</>}</p>
                                     <p className={"card-text"}>Mahalliy mehmonlar uchun: {item.howMany} so'm</p>
                                     <p className={"card-text"}>Chet elliklar uchun: {item.howMuchRoom} so'm</p>
-                                    <button className={'btn btn-sm btn-light'} data-bs-toggle={"modal"} data-bs-target={"#more"} onClick={() => setMore(item.description)} style={{marginRight: "10px"}}>Ko'proq
+                                    <button className={'btn btn-sm btn-light'} data-bs-toggle={"modal"}
+                                            data-bs-target={"#more"} onClick={() => setMore(item.description)}
+                                            style={{marginRight: "10px"}}>Ko'proq
                                     </button>
                                     <button onClick={() => setId(item.id)} className={'btn btn-sm btn-light'}
                                             data-bs-toggle={"modal"}
@@ -150,9 +170,11 @@ export const Rooms = () => {
                                         style={{fontSize: "10px"}}
                                         className={"fas fa-trash text-danger"}></i>
                                     </button>
-                                    <button  style={{marginRight: '10px'}} onClick={() => deleteImgs(item.id)} className={"btn btn-sm btn-light"}><i
+                                    <button style={{marginRight: '10px'}} onClick={() => deleteImgs(item.id)}
+                                            className={"btn btn-sm btn-light"}><i
                                         style={{fontSize: "12px"}} className={"fas fa-trash-can-arrow-up"}></i></button>
-                                    <button onClick={() => catchId(item.id)} data-bs-toggle={"modal"} data-bs-target={"#uploadPhoto"}
+                                    <button onClick={() => catchId(item.id)} data-bs-toggle={"modal"}
+                                            data-bs-target={"#uploadPhoto"}
                                             className={"btn btn-light btn-sm"}>
                                         <i className={"fas fa-image"} style={{fontSize: "10px"}}></i>
                                     </button>
@@ -222,20 +244,20 @@ export const Rooms = () => {
                                           name={"descriptionTurk"}></textarea>
 
                                 <label htmlFor="howMany">
-                                    Xona necha kishilik
+                                    Mahalliy mehmonlar uchun
                                 </label>
                                 <input type={"text"} className={"form-control mb-3"} value={howMany}
                                        onChange={e => setHowMany(e.target.value)} id={"howMany"}
                                        name={"howMany"}/>
 
                                 <label htmlFor="howMuch">
-                                    Xonalar soni
+                                    Chet ellik mehmonlar uchun
                                 </label>
                                 <input type={"text"} className={"form-control mb-3"} value={howMuch}
                                        onChange={e => setHowMuch(e.target.value)} id={"howMuch"}
                                        name={"howMuch"}/>
                                 <label htmlFor="szie">
-                                    Xona o'lchami
+                                    Tour firmalar uchun
                                 </label>
                                 <input type={"text"} className={"form-control mb-3"} value={size}
                                        onChange={e => setSize(e.target.value)} id={"szie"}
@@ -244,7 +266,8 @@ export const Rooms = () => {
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Yopish</button>
-                            <button type="button" className="btn btn-warning text-white" onClick={() => editRoom()}>Taxrirlang
+                            <button type="button" className="btn btn-warning text-white"
+                                    onClick={() => editRoom()}>Taxrirlang
                             </button>
                         </div>
                     </div>
@@ -312,11 +335,11 @@ export const Rooms = () => {
                                     Mahalliy mehmonlar uchun
                                 </label>
                                 <input type={"text"} className={"form-control mb-3"} value={howMany}
-                                          onChange={e => setHowMany(e.target.value)} id={"mahalla"}
-                                          name={"mahalla"}/>
+                                       onChange={e => setHowMany(e.target.value)} id={"mahalla"}
+                                       name={"mahalla"}/>
 
                                 <label htmlFor="chetel">
-                                    Chet elliklar mehmonlar uchun
+                                    Chet ellik mehmonlar uchun
                                 </label>
                                 <input type={"text"} className={"form-control mb-3"} value={howMuch}
                                        onChange={e => setHowMuch(e.target.value)} id={"chetel"}
