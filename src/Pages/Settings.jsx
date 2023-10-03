@@ -20,7 +20,7 @@ export const Settings = () => {
                     <input type="email" id={"email"} name={"email"} value={email} onChange={e => setEmail(e.target.value)}  placeholder={"mail@gmail.com"} className={"form-control mb-4"}/>
                     <label htmlFor="password">Parolni taxrirlash uchun shu yerga kiriting</label>
                     <input type="password" onChange={e => setPassword(e.target.value)} className={"form-control"} placeholder={"********"} value={password}/>
-                    <button type={"button"} onClick={() => editData()} className={"btn btn-warning mt-4 text-white"}>Taxrirlash</button>
+                    <button type={"button"} onClick={() => editData()} className={password.length === 0 || email.length === 0 ? "btn disabled mt-4 text-white" : "btn btn-warning mt-4 text-white"}>Taxrirlash</button>
                 </form>
             </div>
         </div>
