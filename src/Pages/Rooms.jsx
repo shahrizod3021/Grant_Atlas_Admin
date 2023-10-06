@@ -94,7 +94,7 @@ export const Rooms = () => {
         setDescriptionRu("")
         setDescriptionEng("")
         setDescriptionTurk("")
-        setHowMuch("")
+        setHowMany("")
         setHowMuch("")
         setSize("")
 
@@ -154,8 +154,9 @@ export const Rooms = () => {
                                     <p className={"card-text"}>Xona turi: {item.nameUz}</p>
                                     <p className="card-text">Xona haqida
                                         qisqacha: {item.description.length > 30 ? <>{item.description.substring(0, 20)}...</> : <>{item.description}</>}</p>
-                                    <p className={"card-text"}>Mahalliy mehmonlar uchun: {item.howMany} so'm</p>
-                                    <p className={"card-text"}>Chet elliklar uchun: {item.howMuchRoom} so'm</p>
+                                    <p className={"card-text"}>Mahalliy mehmonlar uchun: {item.howMany} USZ</p>
+                                    <p className={"card-text"}>Chet elliklar uchun: ${item.howMuchRoom}</p>
+                                    <p className={"card-text"}>Tour firmalar uchun: ${item.size}</p>
                                     <button className={'btn btn-sm btn-light'} data-bs-toggle={"modal"}
                                             data-bs-target={"#more"} onClick={() => setMore(item.description)}
                                             style={{marginRight: "10px"}}>Ko'proq
@@ -256,11 +257,11 @@ export const Rooms = () => {
                                 <input type={"text"} className={"form-control mb-3"} value={howMuch}
                                        onChange={e => setHowMuch(e.target.value)} id={"howMuch"}
                                        name={"howMuch"}/>
-                                <label htmlFor="szie">
+                                <label htmlFor="size">
                                     Tour firmalar uchun
                                 </label>
                                 <input type={"text"} className={"form-control mb-3"} value={size}
-                                       onChange={e => setSize(e.target.value)} id={"szie"}
+                                       onChange={e => setSize(e.target.value)} id={"size"}
                                        name={"size"}/>
                             </form>
                         </div>
